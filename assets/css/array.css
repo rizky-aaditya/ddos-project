@@ -1,0 +1,111 @@
+body{
+	
+	background-color: #2E2E2E;
+}
+
+/* Bagian atas */
+
+.navbar-default{
+	background-color: #424242;
+	border-width: 7px;
+}
+.navbar .navbar-left{
+	padding: 5px;
+}
+.container h4{
+	font-size: 20px;
+	color: #fff;
+	text-shadow: 0.5px 2.5px #000;
+}
+.container h2{
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 0.5px 2.5px #000;
+}
+.container h3{
+	margin-top: 50px;
+	font-size: 25px;
+	color: red;
+
+}
+.jumbotron{
+	background-color: #585858;
+}
+.jumbotron-fluid{
+	margin-left: 230px;
+}
+.row{
+	color: white;
+}
+.row .col-md-4{
+	border-left-style: solid;
+	border-width: 2px;
+	border-color: #585858;
+}
+
+
+
+/* Bagian monitoring*/
+
+.login-hummidity{
+	padding: 85px;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	margin-top: 70px;
+	background-color: #585858;
+	color: #fff;
+	text-shadow: 4px 4px #000;
+}
+.login-hummidity i{
+	margin-top: 20px;
+	margin-left: 175px;
+	text-shadow: 0.5px 2px #000;
+}
+.login-flood{
+	padding: 85px;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	margin-top: 70px;
+	background-color: #585858;
+	color: #fff;
+	text-shadow: 4px 4px #000;
+}
+.login-flood i{
+	margin-top: 20px;
+	margin-left: 175px;
+	text-shadow: 0.5px 2px #000;
+}
+#tentang-kami{
+	color: white;
+	border-top-style: dashed;
+	border-bottom-style: solid;
+	border-width: 2px;
+	padding-bottom: 5px;
+}
+.canvas{
+	margin-top: 25px;
+	display: block;
+	background-color: red;
+	color: white;
+}
+
+.grafik1{
+	margin-left: 230px;
+}
+
+
+/* Footer */
+
+.footer{
+	margin-left: 230px;
+	margin: auto;
+	margin-top: 25px;
+	background-color: #1C1C1C;
+	padding: 10px 0 2px 0;
+	color: #fff;
+}
+.btn-default{
+	color: white;
+	background-color: #585858;
+}
+

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AIR POLLUTION</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link href="assets/css/array.css" rel="stylesheet">
+
+  </head> 
+  <script src="assets/js/highstock.js"></script>
+	<script src="assets/js/exporting.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+	<script>
+ 		 var config = {
+   		 apiKey: "AIzaSyAB5ozuAKQYd3E7kn0KPQoWuqTPdhJZ4lo",
+    	 authDomain: "aray-a54c1.firebaseapp.com",
+    	 databaseURL: "https://aray-a54c1.firebaseio.com",
+   		 projectId: "aray-a54c1",
+   		 storageBucket: "aray-a54c1.appspot.com",
+   		 messagingSenderId: "895966285870"
+	  	 };
+	  	 firebase.initializeApp(config);
+
+	  // Konek ke firebase database
+
+	  const FireBase1 = firebase.database().ref().child("Sensor2").child("ketinggian");
+	  var result; //temperature variable
+	  var snap = function(datasnapshot){         
+	  result = parseFloat(datasnapshot.val())
+	  };
+	  FireBase1.on("value", snap)
+	  Highcharts.setOptions({
+	      global: {
+	          useUTC: false
+	      }
+	  });
+
+	 
+	</script>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""></a>
+          <img src="image/aray.png" width="150" height="80">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+             <ul class="nav navbar-nav side-nav">
+            <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="controling.html">Controling</a></li>
+            <li><a href="monitoring.html">Monitoring</a></li>
+            <li><a href="maps.html">Maps</a></li>
+            <li><a href="information.html">Information</a></li>
+          	</ul>
+           <ul class="nav navbar-nav navbar-right">
+    	<li><a href="index.php">
+    	<span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp;</span></a></li></ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+<!-- bagian monitoring digital -->
+
+
+<div class="container">
+
+  <div class="panel panel-danger temp-panel">
+    <div class="panel-heading">
+      <h3 class="text-center">Keadaan Wilayah Saat Ini</h3>
+    </div>
+    <div class="panel-body">
+      <h1 class="text-center">
+
+    
+     	
+		<script type="text/javascript">
+
+			<?php
+			$nilaisensorgas = 400;
+			$nilaisensordebu = 1;
+			if($nilaisensorgas > 400 && $nilaisensordebu > 1)
+			{
+				e
+			}
+			const fbase = firebase.database().ref("Quality");
+			fbase.on("value", snap=>{
+			document.getElementById("angka").innerText = snap.val();
+			})
+		</script>
+		<center>
+		<table>
+		<tr><td><p id="angka"></p></td><td><p id="quality"></p></td></tr>
+		<script>
+		    quality.on("value", function(snapshot){
+		        document.getElementById("quality").innerHTML = snapshot.val();
+		    });
+		</script>
+		</table>
+		</center>
+	      <!-- tempat menampilkan nilai suhu digital -->
+      </h1>
+    </div>
+  </div>
+</div>
+</div>  
+</div> 
+</section>
+
+
+
+	<!-- highstock -->
+
+	<div class = "grafik1">
+	<div class = "row">
+	<div class = "col-md-12">
+		<div id="content1">
+	<script>
+		// Create the chart
+		Highcharts.stockChart('content1', {
+		    chart: {
+		        events: {
+		            load: function () {
+
+		                // set up the updating of the chart each second
+		                var series = this.series[0];
+
+		                setInterval(function () {
+		                    var x = (new Date()).getTime(), // current time
+		                        y = result;
+		                        console.log(x);
+		                    series.addPoint([x, y], true);
+		                }, 1000);
+		            }
+		        }
+		    },
+
+		    rangeSelector: {
+		        buttons: [{
+		            count: 1,
+		            type: 'minute',
+		            text: '1M'
+		        }, {
+		            count: 5,
+		            type: 'minute',
+		            text: '5M'
+		        }, {
+		            type: 'all',
+		            text: 'All'
+		        }],
+		        inputEnabled: false,
+		        selected: 0
+		    },
+
+		    title: {
+		        text: 'GRAFIK KETINGGIAN AIR'
+		    },
+		    tooltip: {
+		            split: true
+		        },
+		        yAxis: {
+		            title: {
+		                text: '(Tinggi Air Dalam CM)'
+		            }
+		        },
+
+		    exporting: {
+		        enabled: false
+		    },
+
+		    series: [{
+		        name: 'Ketinggian air',
+		        data: [[new Date().getTime(), result]]
+		        	
+		    	}]
+		});
+</script>
+
+
+
+<br> <br> <br><br>
+<footer class="footer">
+    <p align="center">&copy;&nbsp;COPYRIGHT 2018 - ARAY</p>
+  </footer>
+      <div id="page-wrapper">
+
+  
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+    
+  </body>
+</html>
+
+
+

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AIR POLLUTION</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+  </head> 
+
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""></a>
+          <img src="image/aray.png" width="150" height="80">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+       <ul class="nav navbar-nav side-nav">
+            <li><a href="index1.php"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="controling.html">Controling</a></li>
+            <li><a href="monitoring.html">Monitoring</a></li>
+            <li><a href="maps.html">Maps</a></li>
+            <li><a href="information.html">Information</a></li>
+          	</ul>
+
+           <ul class="nav navbar-nav navbar-right">
+    	<li><a href="index.php">
+    	<span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp;</span></a></li></ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+
+
+    
+     	
+		<script type="text/javascript">
+
+			<?php
+			$nilaisensorgas = 400;
+			$nilaisensordebu = 1;
+			if($nilaisensorgas > 400 && $nilaisensordebu > 1)
+			{
+				e
+			}
+			const fbase = firebase.database().ref("Quality");
+			fbase.on("value", snap=>{
+			document.getElementById("angka").innerText = snap.val();
+			})
+		</script>
+		<center>
+		<table>
+		<tr><td><p id="angka"></p></td><td><p id="quality"></p></td></tr>
+		<script>
+		    quality.on("value", function(snapshot){
+		        document.getElementById("quality").innerHTML = snapshot.val();
+		    });
+		</script>
+		</table>
+		</center>
+	      <!-- tempat menampilkan nilai suhu digital -->
+     	      <!--Jumbotron-->
+  <div class="jumbotron jumbotron-fluid" style="background-color: white">
+  <h1 align="center">Flood Warning</h1>
+   <p align="center">Controlling BUZZER</p>
+ </div>
+      <!--Akhir Jumbotron-->
+
+      <!--Controlling-->
+    <section class="controlling" id="controlling">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          <h2 class="text-center"></h2>
+          <hr>
+          </div>
+        </div>
+      </div> 
+
+      <div class="row text-center">
+        <div class="col-sm-6 d-flex align-items-center btn-group-vertical">
+          <button onclick="offLamp()" type="button" class="btn btn-danger btn-lg btn-block">OFF</button>
+        </div>
+        
+        <div class="col-sm-6">
+          <img src="image/buzzer.jpg" class="img-responsive center-block">
+        </div>
+        
+        </div>
+
+      </section>
+      <br>
+      <br>
+        <!--Akhir Controlling-->
+
+
+       
+
+
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyADceqjDOj8WUeL0cFKhir1Ehr0d8QaWUU",
+    authDomain: "fir-realtimedb-9a082.firebaseapp.com",
+    databaseURL: "https://fir-realtimedb-9a082.firebaseio.com",
+    projectId: "fir-realtimedb-9a082",
+    storageBucket: "fir-realtimedb-9a082.appspot.com",
+    messagingSenderId: "812762728364"
+  };
+  firebase.initializeApp(config);
+
+  var nyala = firebase.database().ref("Controlling");
+
+  function onLamp(){
+    nyala.set({LED:"1"});
+  }
+
+  function offLamp(){
+    nyala.set({LED:"0"});
+  }
+</script>
+
+
+
+<br> <br> <br><br>
+<footer class="footer">
+    <p align="center">&copy;&nbsp;COPYRIGHT 2018 - ARAY</p>
+  </footer>
+      <div id="page-wrapper">
+
+  
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+    
+  </body>
+</html>
+
+
+
